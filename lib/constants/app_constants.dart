@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class AppConstants {
   static ThemeData getAppTheme(BuildContext context) {
     return ThemeData(
-      canvasColor: const Color(0xff000000),
+      canvasColor: const Color(0xff121212),
+      //canvasColor: const Color(0xff000000),
       colorScheme: const ColorScheme(
         primary: Color(0xff1db954),
         primaryVariant: Color(0xff1ed760),
@@ -35,7 +36,7 @@ class AppConstants {
             ),
         bodyText2: Theme.of(context).textTheme.bodyText2?.copyWith(
               fontFamily: 'CircularStd',
-              fontWeight: FontWeight.w300,
+              fontWeight: FontWeight.w400,
             ),
         caption: Theme.of(context).textTheme.caption?.copyWith(
               fontFamily: 'CircularStd',
