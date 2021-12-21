@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppConstants {
+  static const Color greyColor = Color(0xff535353);
   static ThemeData getAppTheme(BuildContext context) {
     return ThemeData(
       canvasColor: const Color(0xff121212),

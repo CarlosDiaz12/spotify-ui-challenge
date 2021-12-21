@@ -16,7 +16,7 @@ class _BottomNavigationState extends State<BottomNavigationWidget> {
   @override
   Widget build(BuildContext context) {
     var _textTheme = Theme.of(context).textTheme.bodyText1?.copyWith(
-          fontSize: 13,
+          fontSize: 12,
           letterSpacing: 0.5,
         );
     return BottomNavigationBar(

@@ -27,6 +27,7 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       extendBody: true,
       body: PageView(
+        physics: NeverScrollableScrollPhysics(),
         children: [
           HomePage(),
           SearchPage(),
