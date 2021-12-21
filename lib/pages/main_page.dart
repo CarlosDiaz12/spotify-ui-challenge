@@ -24,6 +24,7 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
+    var _isKeyBoardVisible = MediaQuery.of(context).viewInsets.bottom != 0;
     return Scaffold(
       extendBody: true,
       body: PageView(
@@ -35,8 +36,9 @@ class _MainPageState extends State<MainPage> {
         ],
         controller: _pageController,
       ),
-      bottomNavigationBar:
-          BottomNavigationWidget(onItemChanged: _onItemChanged),
+      bottomNavigationBar: _isKeyBoardVisible
+          ? null
+          : BottomNavigationWidget(onItemChanged: _onItemChanged),
     );
   }
 }
