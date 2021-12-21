@@ -18,7 +18,7 @@ class CustomItemCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: backgroundColor,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(6),
       ),
       child: Stack(
         children: [
@@ -41,9 +41,9 @@ class CustomItemCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black,
-                      blurRadius: 2.0,
-                      spreadRadius: 0.0,
+                      color: Colors.grey[700]!,
+                      blurRadius: 1.0,
+                      spreadRadius: 1.0,
                       offset:
                           Offset(2.0, 2.0), // shadow direction: bottom right
                     )

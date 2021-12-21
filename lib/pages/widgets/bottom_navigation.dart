@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'floating_control_widget.dart';
+
 class BottomNavigationWidget extends StatefulWidget {
   final Function(int index) onItemChanged;
   const BottomNavigationWidget({
@@ -16,38 +18,56 @@ class _BottomNavigationState extends State<BottomNavigationWidget> {
   @override
   Widget build(BuildContext context) {
     var _textTheme = Theme.of(context).textTheme.bodyText1?.copyWith(
-          fontSize: 12,
+          fontSize: 13,
           letterSpacing: 0.5,
         );
-    return BottomNavigationBar(
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home_outlined),
-          label: 'Home',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.search),
-          label: 'Search',
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.library_music),
-          label: 'My Library',
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: [
+        FloatingControlWidget(),
+        Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [
+                Colors.black,
+                Colors.transparent,
+              ],
+            ),
+          ),
+          child: BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home_outlined),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.library_music),
+                label: 'My Library',
+              ),
+            ],
+            onTap: (index) {
+              setState(() {
+                _currentTabIndex = index;
+                widget.onItemChanged.call(index);
+              });
+            },
+            currentIndex: _currentTabIndex,
+            showUnselectedLabels: true,
+            unselectedItemColor: Colors.grey,
+            selectedItemColor: Colors.white,
+            selectedLabelStyle: _textTheme,
+            unselectedLabelStyle: _textTheme,
+            iconSize: 36,
+            backgroundColor: Theme.of(context).canvasColor.withOpacity(0.3),
+          ),
         ),
       ],
-      onTap: (index) {
-        setState(() {
-          _currentTabIndex = index;
-          widget.onItemChanged.call(index);
-        });
-      },
-      currentIndex: _currentTabIndex,
-      showUnselectedLabels: true,
-      unselectedItemColor: Colors.grey,
-      selectedItemColor: Colors.white,
-      selectedFontSize: 12.0,
-      selectedLabelStyle: _textTheme,
-      unselectedLabelStyle: _textTheme,
-      backgroundColor: Theme.of(context).canvasColor.withOpacity(0.3),
     );
   }
 }

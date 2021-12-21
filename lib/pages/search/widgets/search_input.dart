@@ -23,7 +23,7 @@ class SearchInput extends StatelessWidget {
             color: Colors.white,
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
             child: Align(
               alignment: Alignment.center,
               child: TextField(
