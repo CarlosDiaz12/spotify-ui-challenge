@@ -18,72 +18,68 @@ class FloatingControlWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
+            //mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
-                height: 50,
-                width: 50,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.transparent,
-                  image: DecorationImage(
-                    image: AssetImage('assets/images/scream-shout.jpg'),
+              Row(
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(6),
+                      color: Colors.transparent,
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/scream-shout.jpg'),
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(width: 10),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Scream & Shout',
+                        style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
+                      ),
+                      Text(
+                        'will.i.am, Britney Spears',
+                        style: Theme.of(context).textTheme.bodyText2?.copyWith(
+                              color: Colors.grey[400],
+                              fontSize: 14,
+                            ),
+                      ),
+                    ],
+                  ),
+                ],
               ),
-              SizedBox(width: 10),
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Scream & Shout',
-                          style:
-                              Theme.of(context).textTheme.bodyText1?.copyWith(
-                                    color: Colors.white,
-                                    fontSize: 16,
-                                  ),
-                        ),
-                        Text(
-                          'will.i.am, Britney Spears',
-                          style:
-                              Theme.of(context).textTheme.bodyText2?.copyWith(
-                                    color: Colors.grey[400],
-                                    fontSize: 14,
-                                  ),
-                        ),
-                      ],
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  SizedBox(width: 10),
+                  Icon(
+                    Icons.devices_outlined,
+                    color: Colors.grey,
+                    size: 26,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      Icons.favorite_border_outlined,
+                      color: Colors.grey,
+                      size: 26,
                     ),
-                    SizedBox(width: 40),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: Icon(
-                        Icons.devices_outlined,
-                        color: Colors.grey,
-                        size: 30,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: Icon(
-                        Icons.favorite_border_outlined,
-                        color: Colors.grey,
-                        size: 30,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 8),
-                      child: Icon(
-                        Icons.play_arrow,
-                        color: Colors.white,
-                        size: 30,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                  Icon(
+                    Icons.play_arrow,
+                    color: Colors.white,
+                    size: 26,
+                  ),
+                ],
               ),
             ],
           ),
