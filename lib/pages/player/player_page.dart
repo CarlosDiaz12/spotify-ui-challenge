@@ -26,7 +26,7 @@ class PlayerPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
           child: Column(
             children: [
               SizedBox(height: MediaQuery.of(context).size.width * 0.08),
@@ -119,14 +119,14 @@ class PlayerPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         _buildIcon(Icons.shuffle),
-                        _buildIcon(Icons.skip_previous, 40),
+                        _buildIcon(Icons.skip_previous, 46),
                         CircleAvatar(
                           backgroundColor: Colors.white,
                           radius: 32,
                           child: _buildIcon(
                               Icons.play_arrow_rounded, 42, Colors.black),
                         ),
-                        _buildIcon(Icons.skip_next, 40),
+                        _buildIcon(Icons.skip_next, 46),
                         _buildIcon(Icons.repeat),
                       ],
                     ),
@@ -180,9 +180,13 @@ class _Header extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Icon(
-          Icons.keyboard_arrow_down_sharp,
-          size: 42,
+        IconButton(
+          padding: EdgeInsets.zero,
+          onPressed: () {
+            if (Navigator.of(context).canPop()) Navigator.of(context).pop();
+          },
+          icon: Icon(Icons.keyboard_arrow_down_sharp),
+          iconSize: 42,
         ),
         Container(
           width: MediaQuery.of(context).size.width * 0.68,
